@@ -1,0 +1,20 @@
+<br />
+<div class="container">
+  <div class="form-group">
+    <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+      <ng-wizard-step *ngFor="let stepDefinition of stepDefinitions" [title]="stepDefinition.title"
+        [description]="stepDefinition.description" [state]="stepDefinition.state" [component]="stepDefinition.component"
+        [canEnter]="stepDefinition.canEnter" [canExit]="stepDefinition.canExit">
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Dennis'" [description]="'Dennis\'s activity'">
+        <app-step-six>No Comments from Dennis</app-step-six>
+      </ng-wizard-step>
+
+      <ng-wizard-step [title]="'Kurtis'" [description]="'Kurtis\'s activity'">
+        <span>Kurtis is inactive user</span>
+      </ng-wizard-step>
+    </ng-wizard>
+  </div>
+
+</div>
